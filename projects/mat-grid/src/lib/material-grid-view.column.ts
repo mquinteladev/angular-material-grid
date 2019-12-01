@@ -1,4 +1,5 @@
 import { ButtonCommand } from './material-grid-button.command';
+import { ColumnType } from './ColumnType';
 
 
 export class MaterialViewGridColumn {
@@ -13,7 +14,3 @@ export class MaterialViewGridColumn {
   }
 }
 
-export enum ColumnType {
-  Column = 'Column',
-  Command = 'Command'
-}

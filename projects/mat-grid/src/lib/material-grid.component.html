@@ -1,4 +1,5 @@
-<div id="matGrid" *ngIf="gridConfiguration" class="mat-tbl-container mat-elevation-z8">
+<div *ngIf="gridConfiguration && gridConfiguration.getColumnsFieldsName().length > 0"
+  class="mat-tbl-container mat-elevation-z8">
   <table mat-table [dataSource]="matTableDataSource" matSort>
 
 
@@ -41,6 +42,6 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: false"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
-  <mat-paginator [pageSizeOptions]="pageSizeOptions">
+  <mat-paginator [pageSizeOptions]="gridConfiguration.getPageSizeOptions()">
   </mat-paginator>
 </div>

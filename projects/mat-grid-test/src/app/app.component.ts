@@ -16,11 +16,11 @@ import { ButtonCommand } from 'mat-grid';
 export class AppComponent implements OnInit {
   title = 'mat-grid-test';
 
-  gspGridConfiguration: MaterialGridConfiguration;
+  gridConfiguration: MaterialGridConfiguration;
 
   @ViewChild('grid')
   grid: MaterialGridComponent;
-
+  public data = [];
 
   ngOnInit() {
 
@@ -32,10 +32,9 @@ export class AppComponent implements OnInit {
         new ButtonCommand('', new ButtonOperation(), 'blue-icon mat-button', 'edit')
         , new ButtonCommand('', new ButtonOperation(), 'mat-button', 'delete_outline')], 'ACTIONS', 'mat-column-action')
     ];
-    const data = [new Application('Xfinity', '123', '345')];
-    this.gspGridConfiguration = new MaterialGridConfiguration(columns, [5, 10]);
-    this.grid.setDataSource(data);
-
+    this.data = [new Application('Xfinity', '123', '345')];
+    this.gridConfiguration = new MaterialGridConfiguration(columns, [5, 10]);
+    this.grid.setDataSource(this.data);
 
 
   }

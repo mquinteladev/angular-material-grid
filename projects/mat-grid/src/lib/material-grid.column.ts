@@ -1,11 +1,12 @@
 import { DomSanitizer } from '@angular/platform-browser';
+import { MaterialGridGenericColumn } from './material-grid-generic.column';
 
-export class MaterialGridColumn {
+export class MaterialGridColumn extends MaterialGridGenericColumn {
   public sanitizer: DomSanitizer;
   commandButtons: any;
   columnCSSClass: any;
-  constructor(public name: string, public field: string, public sort: boolean = false) {
-
+  constructor(private name: string, public field: string, public sort: boolean = false) {
+    super(name);
   }
 
   getHtmlSort() {

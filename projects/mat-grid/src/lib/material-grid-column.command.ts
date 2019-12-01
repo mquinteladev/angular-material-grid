@@ -1,14 +1,14 @@
 import { ButtonCommand } from './material-grid-button.command';
+import { MaterialGridGenericColumn } from './material-grid-generic.column';
 
-export class MaterialGridColumnCommand {
+export class MaterialGridColumnCommand extends MaterialGridGenericColumn {
 
   public title: string;
 
-  constructor(public commandButtons: ButtonCommand[], public columnName: string, public columnCSSClass: string = '') {
-
+  constructor(public commandButtons: ButtonCommand[], private name: string, public columnCSSClass: string = '') {
+    super(name);
     const random = Math.random();
-
-    this.title = columnName === '' ? 'Action_Hidden_Empty_Title' + random.toString() : columnName;
+    this.title = this.columnName === '' ? 'Action_Hidden_Empty_Title' + random.toString() : this.columnName;
   }
 
 
